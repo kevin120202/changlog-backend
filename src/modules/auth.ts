@@ -29,6 +29,8 @@ export const protect = (req, res, next) => {
 
     try {
         const user = jwt.verify(token, process.env.JWT_SECRET)
+        console.log(user);
+
         req.user = user
         next()
     } catch (e) {
